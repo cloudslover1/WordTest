@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
@@ -15,11 +16,17 @@
             <font>
                <Font name="Arial Bold" size="30.0" />
             </font>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
          </Button>
          <Button fx:id="EditButton" layoutX="198.0" layoutY="50.0" mnemonicParsing="false" onAction="#switchToEditScene" prefHeight="74.0" prefWidth="288.0" style="-fx-background-color: #FABF40; -fx-background-radius: 15; -fx-border-radius: 15;" text="Добавить слова" textFill="WHITE">
             <font>
                <Font name="Arial Bold" size="30.0" />
             </font>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
          </Button>
       </children>
       <padding>

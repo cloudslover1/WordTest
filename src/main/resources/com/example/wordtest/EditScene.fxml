@@ -1,23 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.wordtest.EditSceneController" >
+<AnchorPane prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: #E1E7F1;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.wordtest.EditSceneController">
    <children>
-      <VBox prefHeight="450.0" prefWidth="700.0">
+      <HBox alignment="CENTER" prefHeight="450.0" prefWidth="700.0" spacing="20.0" AnchorPane.topAnchor="0.0">
          <children>
-            <HBox alignment="CENTER" prefHeight="545.0" prefWidth="700.0">
+            <VBox alignment="CENTER" prefHeight="410.0" prefWidth="333.0" spacing="20.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="59.0" prefWidth="97.0" text="Button" />
+                  <TableView prefHeight="348.0" prefWidth="333.0" style="-fx-background-radius: 15;">
+                    <columns>
+                      <TableColumn maxWidth="176.0" minWidth="139.0" prefWidth="168.0" resizable="false" text="Слово" />
+                      <TableColumn maxWidth="193.0" minWidth="139.0" prefWidth="164.0" resizable="false" text="Перевод" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </TableView>
+                  <Button fx:id="DeleteButton" mnemonicParsing="false" prefHeight="59.0" prefWidth="97.0" style="-fx-background-color: white; -fx-background-radius: 50; -fx-border-radius: 50;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
                </children>
-            </HBox>
-            <HBox alignment="BOTTOM_RIGHT" prefHeight="451.0" prefWidth="700.0">
+               <padding>
+                  <Insets top="20.0" />
+               </padding></VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="310.0" prefWidth="277.0">
                <children>
-                  <Button fx:id="BackFromEditButton" mnemonicParsing="false" onAction="#switchToMainMenu" text="Назад" />
-               </children>
-            </HBox>
+                  <VBox alignment="CENTER" prefHeight="251.0" prefWidth="277.0" spacing="20.0" style="-fx-background-color: #FABF40; -fx-background-radius: 20; -fx-border-radius: 20;">
+                     <children>
+                        <TextField prefHeight="50.0" prefWidth="277.0" promptText="Слово" style="-fx-background-radius: 15;">
+                           <font>
+                              <Font size="20.0" />
+                           </font></TextField>
+                        <TextField layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="277.0" promptText="Перевод" style="-fx-background-radius: 15;">
+                           <font>
+                              <Font size="20.0" />
+                           </font></TextField>
+                        <Button fx:id="AddButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="62.0" style="-fx-background-radius: 50; -fx-background-color: #FAD835;">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="40.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets top="40.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <Button fx:id="BackFromEditButton" mnemonicParsing="false" onAction="#switchToMainMenu" prefHeight="57.0" prefWidth="82.0" style="-fx-background-radius: 15; -fx-background-color: #FABF40;" text="Назад" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets left="200.0" top="100.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+               </children></VBox>
          </children>
-      </VBox>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding></HBox>
    </children>
 </AnchorPane>

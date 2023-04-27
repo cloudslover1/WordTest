@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.wordtest.EditSceneController" >
+   <children>
+      <VBox prefHeight="450.0" prefWidth="700.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="545.0" prefWidth="700.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="59.0" prefWidth="97.0" text="Button" />
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_RIGHT" prefHeight="451.0" prefWidth="700.0">
+               <children>
+                  <Button fx:id="BackFromEditButton" mnemonicParsing="false" onAction="#switchToMainMenu" text="Назад" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

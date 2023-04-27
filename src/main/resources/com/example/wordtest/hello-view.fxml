@@ -3,12 +3,26 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="439.0" prefWidth="703.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="com.example.wordtest.HelloController">
+<VBox alignment="CENTER" prefHeight="439.0" prefWidth="703.0" spacing="20.0" style="-fx-background-color: #E1E7F1;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.wordtest.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-
-    <Label fx:id="welcomeText" />
-    <Button onAction="#onHelloButtonClick" text="Hello!" />
+   <VBox alignment="TOP_CENTER" prefHeight="240.0" prefWidth="663.0" spacing="20.0">
+      <children>
+         <Button fx:id="TestButton" mnemonicParsing="false" onAction="#switchToTestingScene" prefHeight="74.0" prefWidth="288.0" style="-fx-background-color: #FABF40; -fx-background-radius: 15; -fx-border-radius: 15;" text="Тестирование" textFill="WHITE">
+            <font>
+               <Font name="Arial Bold" size="30.0" />
+            </font>
+         </Button>
+         <Button fx:id="EditButton" layoutX="198.0" layoutY="50.0" mnemonicParsing="false" onAction="#switchToEditScene" prefHeight="74.0" prefWidth="288.0" style="-fx-background-color: #FABF40; -fx-background-radius: 15; -fx-border-radius: 15;" text="Добавить слова" textFill="WHITE">
+            <font>
+               <Font name="Arial Bold" size="30.0" />
+            </font>
+         </Button>
+      </children>
+      <padding>
+         <Insets top="40.0" />
+      </padding></VBox>
 </VBox>

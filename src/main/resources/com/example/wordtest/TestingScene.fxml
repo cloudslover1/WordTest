@@ -7,6 +7,12 @@
    <children>
       <VBox prefHeight="450.0" prefWidth="700.0">
          <children>
+            <HBox alignment="CENTER" prefHeight="365.0" prefWidth="700.0">
+               <children>
+                  <TextField fx:id="speechField" />
+                  <Button mnemonicParsing="false" onAction="#letsHearIt" text="Button" />
+               </children>
+            </HBox>
             <HBox alignment="BOTTOM_RIGHT" prefHeight="452.0" prefWidth="700.0">
                <children>
                   <Button fx:id="BackFromTestionButton" mnemonicParsing="false" onAction="#switchToMainMenu2" text="Назад" />

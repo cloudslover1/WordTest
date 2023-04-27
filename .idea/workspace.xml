@@ -4,13 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d997775-50d9-40c8-a18f-7aa84a342dd9" name="Changes" comment="Working scenes switch">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/add.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/delete.png" afterDir="false" />
+    <list default="true" id="0d997775-50d9-40c8-a18f-7aa84a342dd9" name="Changes" comment="edit scene ui added">
+      <change afterPath="$PROJECT_DIR$/jarsjars/cmu_time_awb.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jarsjars/cmu_us_kal.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jarsjars/cmudict04.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jarsjars/cmulex.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jarsjars/cmutimelex.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jarsjars/en_us.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jarsjars/freetts-jsapi10.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jarsjars/freetts.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jarsjars/mbrola.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wordtest/EditSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wordtest/EditSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/wordtest/EditScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/wordtest/EditScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/wordtest/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/wordtest/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wordtest/TestingSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wordtest/TestingSceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/wordtest/TestingScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/wordtest/TestingScene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +59,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/Do not forget to delete/JavaTasks/WordTest"
+    "last_opened_file_path": "D:/Do not forget to delete/JavaTasks/WordTest/jarsjars",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.38850576",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="RunManager">
@@ -87,13 +98,21 @@
       <option name="project" value="LOCAL" />
       <updated>1682611419655</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="edit scene ui added">
+      <created>1682620957562</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682620957562</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="The start" />
     <MESSAGE value="Working scenes switch" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working scenes switch" />
+    <MESSAGE value="edit scene ui added" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit scene ui added" />
   </component>
 </project>

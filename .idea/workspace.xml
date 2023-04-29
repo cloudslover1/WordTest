@@ -4,20 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d997775-50d9-40c8-a18f-7aa84a342dd9" name="Changes" comment="edit scene ui added">
-      <change afterPath="$PROJECT_DIR$/jarsjars/cmu_time_awb.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jarsjars/cmu_us_kal.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jarsjars/cmudict04.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jarsjars/cmulex.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jarsjars/cmutimelex.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jarsjars/en_us.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jarsjars/freetts-jsapi10.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jarsjars/freetts.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jarsjars/mbrola.jar" afterDir="false" />
+    <list default="true" id="0d997775-50d9-40c8-a18f-7aa84a342dd9" name="Changes" comment="text to speech functionality added">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/wordtest/Word.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/words.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wordtest/EditSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wordtest/EditSceneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wordtest/TestingSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wordtest/TestingSceneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/wordtest/TestingScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/wordtest/TestingScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/wordtest/EditScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/wordtest/EditScene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,11 +54,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/Do not forget to delete/JavaTasks/WordTest/jarsjars",
-    "project.structure.last.edited": "Modules",
+    "last_opened_file_path": "C:/Users/traitor/Desktop/New folder/jl1.0.jar",
+    "project.structure.last.edited": "Global Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.38850576",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RunManager">
@@ -105,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682620957562</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="text to speech functionality added">
+      <created>1682632773323</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1682632773323</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -113,6 +115,7 @@
     <MESSAGE value="The start" />
     <MESSAGE value="Working scenes switch" />
     <MESSAGE value="edit scene ui added" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit scene ui added" />
+    <MESSAGE value="text to speech functionality added" />
+    <option name="LAST_COMMIT_MESSAGE" value="text to speech functionality added" />
   </component>
 </project>

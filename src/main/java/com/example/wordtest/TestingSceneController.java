@@ -1,5 +1,9 @@
 package com.example.wordtest;
 
+import com.gtranslate.Audio;
+import com.gtranslate.Language;
+import com.sun.speech.freetts.Voice;
+import com.sun.speech.freetts.VoiceManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -7,15 +11,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
-import com.sun.speech.freetts.Voice;
-import com.sun.speech.freetts.VoiceManager;
+//import javazoom.jl.decoder.JavaLayerException;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Objects;
-import java.util.concurrent.ExecutionException;
 
-public class TestingSceneController {
+public class TestingSceneController<JavaLayerException extends Throwable> {
     public Button BackFromTestionButton;
     public TextField speechField;
 
@@ -35,6 +37,15 @@ public class TestingSceneController {
         }
 
     }
+
+ //   public void letsHearIt2(ActionEvent event) throws IOException, JavaLayerException, javazoom.jl.decoder.JavaLayerException {
+  //      InputStream sound = null;
+    //    System.out.println("Hello World!");
+      //  Audio audio = Audio.getInstance();
+        //sound = audio.getAudio("Hello World", Language.ENGLISH);
+        //au//dio.play(sound);
+        //sound.close();
+    //}
 
     public void switchToMainMenu2(ActionEvent event) throws IOException {
         //"hello-view.fxml"

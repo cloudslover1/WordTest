@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d997775-50d9-40c8-a18f-7aa84a342dd9" name="Changes" comment="word storage added">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/wordtest/Word.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/add2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/delete2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/words.txt" afterDir="false" />
+    <list default="true" id="0d997775-50d9-40c8-a18f-7aa84a342dd9" name="Changes" comment="categories added">
+      <change afterPath="$PROJECT_DIR$/myList.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wordtest/EditSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wordtest/EditSceneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/wordtest/EditScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/wordtest/EditScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/words.txt" beforeDir="false" afterPath="$PROJECT_DIR$/words.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682767394803</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="categories added">
+      <created>1682773136771</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1682773136771</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -123,6 +128,7 @@
     <MESSAGE value="edit scene ui added" />
     <MESSAGE value="text to speech functionality added" />
     <MESSAGE value="word storage added" />
-    <option name="LAST_COMMIT_MESSAGE" value="word storage added" />
+    <MESSAGE value="categories added" />
+    <option name="LAST_COMMIT_MESSAGE" value="categories added" />
   </component>
 </project>

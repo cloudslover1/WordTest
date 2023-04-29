@@ -15,9 +15,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-import java.io.BufferedReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -64,7 +62,7 @@ public class EditSceneController implements Initializable {
     ImageView view4 = new ImageView(img4);
 
     //List<String> categories;
-    ObservableList<String> categories = FXCollections.observableArrayList("Все слова", "Глаголы", "Существительные");
+    ObservableList<String> categories = FXCollections.observableArrayList();
 
 
 
@@ -107,6 +105,7 @@ public class EditSceneController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        loadListFromFile();
 
         categoriesList.setItems(categories);
         categoriesList.setValue(categories.get(0));
@@ -147,6 +146,8 @@ public class EditSceneController implements Initializable {
 
         //EditButton.setOnMouseEntered(e -> EditButton.setStyle(HOVERED_BUTTON_STYLE));
         //EditButton.setOnMouseExited(e -> EditButton.setStyle(IDLE_BUTTON_STYLE));
+
+
     }
 
     public void addCategory(ActionEvent event) {
@@ -157,7 +158,15 @@ public class EditSceneController implements Initializable {
 
         dialog.showAndWait().ifPresent(item -> { // отображение диалогового окна и добавление элемента в список
             if (!item.trim().isEmpty()) { // проверка на пустую строку
-                categories.add(item.trim());
+                if (!item.trim().equals("Все слова")) { // проверка на значение "Все слова"
+                    categories.add(item.trim());
+                } else {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Ошибка");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Значение 'Все слова' недопустимо!");
+                    alert.showAndWait();
+                }
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Ошибка");
@@ -214,5 +223,36 @@ public class EditSceneController implements Initializable {
         }
 
         return words1;
+    }
+
+    public void saveListToFile() {
+        try {
+            File file = new File("myList.txt"); // создание объекта File с именем файла
+            FileWriter writer = new FileWriter(file); // создание FileWriter
+            for (String item : categories) { // перебор элементов списка
+                writer.write(item + "\n"); // запись элемента в файл
+            }
+            writer.flush(); // запись буферизованных данных в файл
+            writer.close(); // закрытие FileWriter
+            System.out.println("List saved to file successfully.");
+        } catch (IOException e) {
+            System.out.println("An error occurred while saving the list to file.");
+            e.printStackTrace();
+        }
+    }
+    public void loadListFromFile() {
+        try {
+            File file = new File("myList.txt"); // создание объекта File с именем файла
+            BufferedReader reader = new BufferedReader(new FileReader(file)); // создание BufferedReader
+            String line;
+            while ((line = reader.readLine()) != null) { // чтение файла построчно
+                categories.add(line); // добавление элемента в список
+            }
+            reader.close(); // закрытие BufferedReader
+            System.out.println("List loaded from file successfully.");
+        } catch (IOException e) {
+            System.out.println("An error occurred while loading the list from file.");
+            e.printStackTrace();
+        }
     }
 }

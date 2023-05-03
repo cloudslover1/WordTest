@@ -11,8 +11,8 @@
          <children>
             <HBox fx:id="wordContainer" alignment="CENTER" prefHeight="155.0" prefWidth="700.0" spacing="30.0">
                <children>
-                  <Button fx:id="soundButton" mnemonicParsing="false" onAction="#letsHearIt" prefHeight="68.0" prefWidth="84.0" style="-fx-background-color: #FABF40;" />
-                  <Label fx:id="questionWord" alignment="CENTER" prefHeight="58.0" prefWidth="390.0" style="-fx-background-color: #FABF40; -fx-background-radius: 20;" text="apple" textFill="WHITE">
+                  <Button fx:id="soundButton" mnemonicParsing="false" onAction="#letsHearIt" prefHeight="68.0" prefWidth="84.0" style="-fx-background-color: #7871FF; -fx-background-radius: 15;" />
+                  <Label fx:id="questionWord" alignment="CENTER" prefHeight="58.0" prefWidth="390.0" style="-fx-background-color: #7871FF; -fx-background-radius: 15;" text="apple" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="29.0" />
                      </font></Label>
@@ -23,7 +23,7 @@
             </HBox>
             <HBox fx:id="resultBox" alignment="CENTER" prefHeight="123.0" prefWidth="700.0">
                <children>
-                  <Label fx:id="resultLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="63.0" prefWidth="581.0" style="-fx-background-color: #FABF40; -fx-background-radius: 15;" text="Вы ответили правильно на 10 из 50 слов" textAlignment="CENTER" textFill="WHITE">
+                  <Label fx:id="resultLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="63.0" prefWidth="581.0" style="-fx-background-color: #7871FF; -fx-background-radius: 15;" text="Вы ответили правильно на 10 из 50 слов" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="27.0" />
                      </font>
@@ -32,15 +32,15 @@
             </HBox>
             <HBox fx:id="choicesContainer" alignment="CENTER" prefHeight="125.0" prefWidth="700.0" spacing="30.0">
                <children>
-                  <Button fx:id="choice1" mnemonicParsing="false" onAction="#displayQuestionOnButton" prefHeight="67.0" prefWidth="180.0" style="-fx-background-color: #FABF40; -fx-background-radius: 20;" textFill="WHITE">
+                  <Button fx:id="choice1" mnemonicParsing="false" onAction="#displayQuestionOnButton" prefHeight="67.0" prefWidth="180.0" style="-fx-background-color: #7871FF; -fx-background-radius: 15;" textFill="WHITE">
                      <font>
                         <Font size="27.0" />
                      </font></Button>
-                  <Button fx:id="choice2" layoutX="285.0" layoutY="25.0" mnemonicParsing="false" onAction="#displayQuestionOnButton" prefHeight="67.0" prefWidth="180.0" style="-fx-background-color: #FABF40; -fx-background-radius: 20;" textFill="WHITE">
+                  <Button fx:id="choice2" layoutX="285.0" layoutY="25.0" mnemonicParsing="false" onAction="#displayQuestionOnButton" prefHeight="67.0" prefWidth="180.0" style="-fx-background-color: #7871FF; -fx-background-radius: 15;" textFill="WHITE">
                      <font>
                         <Font size="27.0" />
                      </font></Button>
-                  <Button fx:id="choice3" layoutX="375.0" layoutY="25.0" mnemonicParsing="false" onAction="#displayQuestionOnButton" prefHeight="67.0" prefWidth="180.0" style="-fx-background-color: #FABF40; -fx-background-radius: 20;" textFill="WHITE">
+                  <Button fx:id="choice3" layoutX="375.0" layoutY="25.0" mnemonicParsing="false" onAction="#displayQuestionOnButton" prefHeight="67.0" prefWidth="180.0" style="-fx-background-color: #7871FF; -fx-background-radius: 15;" textFill="WHITE">
                      <font>
                         <Font size="27.0" />
                      </font></Button>
@@ -49,9 +49,9 @@
                   <Insets bottom="50.0" />
                </padding>
             </HBox>
-            <HBox fx:id="backButtonContainer" alignment="BOTTOM_RIGHT" prefHeight="45.0" prefWidth="700.0">
+            <HBox fx:id="backButtonContainer" alignment="CENTER_RIGHT" prefHeight="58.0" prefWidth="700.0">
                <children>
-                  <Button fx:id="BackFromTestionButton" mnemonicParsing="false" onAction="#switchToMainMenu2" prefHeight="33.0" prefWidth="76.0" style="-fx-background-color: #FABF40; -fx-background-radius: 15;" text="Назад" textFill="WHITE">
+                  <Button fx:id="BackFromTestionButton" mnemonicParsing="false" onAction="#switchToMainMenu2" prefHeight="33.0" prefWidth="76.0" style="-fx-background-color: #7871FF; -fx-background-radius: 15;" text="Назад" textFill="WHITE">
                      <HBox.margin>
                         <Insets right="20.0" />
                      </HBox.margin>

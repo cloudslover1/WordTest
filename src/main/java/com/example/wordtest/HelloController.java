@@ -29,10 +29,12 @@ public class HelloController implements Initializable {
     public Button TestButton;
     public Button EditButton;
 
-    private static final String IDLE_BUTTON_STYLE = "-fx-background-color:#FABF40; -fx-background-radius: 15; -fx-border-radius:15";
-    private static final String HOVERED_BUTTON_STYLE = "-fx-background-color:#FAD835; -fx-background-radius: 15; -fx-border-radius:15";
+    private static final String IDLE_BUTTON_STYLE = "-fx-background-color:#7871FF; -fx-background-radius: 15; -fx-border-radius:15";
+    private static final String HOVERED_BUTTON_STYLE = "-fx-background-color:#8190FF; -fx-background-radius: 15; -fx-border-radius:15";
     public ComboBox catComboBox;
     public TextField count;
+    public Button exitButton;
+    public Button TestButton1;
 
     ObservableList<Word> words1 = EditSceneController.getWords();
 
@@ -75,54 +77,6 @@ public class HelloController implements Initializable {
         }
     }
 
-
-/*
-    public void checkAndGoToTest() throws IOException {
-
-
-        //int countQ = Integer.parseInt(count.getText());
-
-        //String selectedValue = choiceBox.getValue().toString();
-        String selectedValue2 = (String) catComboBox.getValue();
-
-        DataHolder.count = Integer.parseInt(count.getText());
-        DataHolder.category = (String) catComboBox.getValue();
-
-        //System.out.println("Выбраная категория: " + selectedValue2 );
-
-
-        //FXMLLoader loader = new FXMLLoader(getClass().getResource("TestingScene.fxml"));
-        //Parent root = loader.load();
-
-        //TestingSceneController testingSceneController = loader.getController();
-
-        // передача количества слов и категории в тестинг контроллер
-        //testingSceneController.setQuestionCount(Integer.parseInt(count.getText()));
-        //testingSceneController.setCategoryChoice(selectedValue2);
-
-
-        //String input = count.getText();
-
-        //ObservableList<Word> words = editSceneController.words;
-        try {
-            int value = Integer.parseInt(String.valueOf(Integer.parseInt(count.getText())));
-            if (checkWordCountByCategory(words1, DataHolder.count, DataHolder.category)){
-
-                System.out.println("Введено число: " + value);
-                System.out.println("aaaaaaaaaaaa: " + checkWordCountByCategory(words1, DataHolder.count, DataHolder.category));
-                switchToTestingScene();
-            } else {
-                showErrorDialog(categoryCount(words1, (String) catComboBox.getValue()));
-            }
-
-        } catch (NumberFormatException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Ошибка: в поле должно быть введено число", ButtonType.OK);
-            alert.showAndWait();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-*/
     public void switchToTestingScene() throws IOException{
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("TestingScene.fxml")));
         Stage window = (Stage) EditButton.getScene().getWindow();
@@ -142,16 +96,17 @@ public class HelloController implements Initializable {
         System.out.println("переданная категория: " + category);
         System.out.println("сравнить с этим: " + count);
         int categoryCount = 0;
-        for (Word word : words) {
-            if (word.getWordCategory().equals(category)) {
-                categoryCount++;
+        if (category.equals("Все слова")) {
+            categoryCount = words.size();
+        } else {
+            for (Word word : words) {
+                if (word.getWordCategory().equals(category)) {
+                    categoryCount++;
+                }
             }
         }
         System.out.println("это: " + categoryCount);
-        return count  <= categoryCount;
-
-
-
+        return count <= categoryCount;
     }
 
     public int categoryCount(ObservableList<Word> words, String category) {
@@ -189,15 +144,15 @@ public class HelloController implements Initializable {
         setCategories();
 
 
-        try {
-            TestButton.setOnMouseEntered(e -> TestButton.setStyle(HOVERED_BUTTON_STYLE));
-            TestButton.setOnMouseExited(e -> TestButton.setStyle(IDLE_BUTTON_STYLE));
 
-            EditButton.setOnMouseEntered(e -> EditButton.setStyle(HOVERED_BUTTON_STYLE));
-            EditButton.setOnMouseExited(e -> EditButton.setStyle(IDLE_BUTTON_STYLE));
-        } catch (Exception e){
-            System.out.println(e.getMessage());
-        }
+        EditButton.setOnMouseEntered(e -> EditButton.setStyle(HOVERED_BUTTON_STYLE));
+        EditButton.setOnMouseExited(e -> EditButton.setStyle(IDLE_BUTTON_STYLE));
+
+        exitButton.setOnMouseEntered(e -> exitButton.setStyle(HOVERED_BUTTON_STYLE));
+        exitButton.setOnMouseExited(e -> exitButton.setStyle(IDLE_BUTTON_STYLE));
+
+        TestButton1.setOnMouseEntered(e -> TestButton1.setStyle(HOVERED_BUTTON_STYLE));
+        TestButton1.setOnMouseExited(e -> TestButton1.setStyle(IDLE_BUTTON_STYLE));
 
 
     }

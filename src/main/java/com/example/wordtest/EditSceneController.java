@@ -34,8 +34,9 @@ public class EditSceneController implements Initializable {
     private static final String IDLE_BUTTON_STYLE_delete = "-fx-background-color:white; -fx-background-radius: 50; -fx-border-radius:50";
     private static final String HOVERED_BUTTON_STYLE_delete = "-fx-background-color:#EBF3F9; -fx-background-radius: 50; -fx-border-radius:50";
 
-    private static final String IDLE_BUTTON_STYLE = "-fx-background-color:#FABF40; -fx-background-radius: 50; -fx-border-radius:50";
-    private static final String HOVERED_BUTTON = "-fx-background-color:#FAD835; -fx-background-radius: 50; -fx-border-radius:50";
+    private static final String IDLE_BUTTON_STYLE = "-fx-background-color:#7871FF; -fx-background-radius: 15; -fx-border-radius:15";
+    private static final String HOVERED_BUTTON = "-fx-background-color:#8190FF; -fx-background-radius: 15; -fx-border-radius:15";
+
 
     @FXML
     public TableView<Word> tableList;
@@ -156,8 +157,8 @@ public class EditSceneController implements Initializable {
         tableList.setItems(words);
 
         DeleteButton.setGraphic(view);
-        DeleteButton.setOnMouseEntered(e -> DeleteButton.setStyle(HOVERED_BUTTON_STYLE_delete));
-        DeleteButton.setOnMouseExited(e -> DeleteButton.setStyle(IDLE_BUTTON_STYLE_delete));
+        DeleteButton.setOnMouseEntered(e -> DeleteButton.setStyle(HOVERED_BUTTON));
+        DeleteButton.setOnMouseExited(e -> DeleteButton.setStyle(IDLE_BUTTON_STYLE));
 
         AddButton.setGraphic(view2);
         AddButton.setOnMouseEntered(e -> AddButton.setStyle(HOVERED_BUTTON));

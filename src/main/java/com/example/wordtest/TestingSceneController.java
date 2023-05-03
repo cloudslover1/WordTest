@@ -46,6 +46,8 @@ public class TestingSceneController implements Initializable {
 
     public int allQuestions;
 
+    private static final String IDLE_BUTTON_STYLE = "-fx-background-color:#7871FF; -fx-background-radius: 15; -fx-border-radius:15";
+    private static final String HOVERED_BUTTON_STYLE = "-fx-background-color:#8190FF; -fx-background-radius: 15; -fx-border-radius:15";
 
     public TestingSceneController() throws IOException {
     }
@@ -117,6 +119,24 @@ public class TestingSceneController implements Initializable {
 
         printSettings();//вывод для отладки
         soundButton.setGraphic(view);
+
+        choice1.setOnMouseEntered(e -> choice1.setStyle(HOVERED_BUTTON_STYLE));
+        choice1.setOnMouseExited(e -> choice1.setStyle(IDLE_BUTTON_STYLE));
+
+        choice2.setOnMouseEntered(e -> choice2.setStyle(HOVERED_BUTTON_STYLE));
+        choice2.setOnMouseExited(e -> choice2.setStyle(IDLE_BUTTON_STYLE));
+
+        choice3.setOnMouseEntered(e -> choice3.setStyle(HOVERED_BUTTON_STYLE));
+        choice3.setOnMouseExited(e -> choice3.setStyle(IDLE_BUTTON_STYLE));
+
+        choice3.setOnMouseEntered(e -> choice3.setStyle(HOVERED_BUTTON_STYLE));
+        choice3.setOnMouseExited(e -> choice3.setStyle(IDLE_BUTTON_STYLE));
+
+        soundButton.setOnMouseEntered(e -> soundButton.setStyle(HOVERED_BUTTON_STYLE));
+        soundButton.setOnMouseExited(e -> soundButton.setStyle(IDLE_BUTTON_STYLE));
+
+        BackFromTestionButton.setOnMouseEntered(e -> BackFromTestionButton.setStyle(HOVERED_BUTTON_STYLE));
+        BackFromTestionButton.setOnMouseExited(e -> BackFromTestionButton.setStyle(IDLE_BUTTON_STYLE));
     }
 
 
@@ -147,10 +167,14 @@ public class TestingSceneController implements Initializable {
 
     public ObservableList<Word> chooseWords(ObservableList<Word> words, String categ) {
         ObservableList<Word> filteredWords = FXCollections.observableArrayList();
-        for (Word word : words) {
-            if (word.getWordCategory().equals(categ)) {
-                filteredWords.add(word);
-                System.out.println("добавлено слово: " + word.getWord());
+        if (categ.equals("Все слова")) {
+            filteredWords.addAll(words);
+        } else {
+            for (Word word : words) {
+                if (word.getWordCategory().equals(categ)) {
+                    filteredWords.add(word);
+                    System.out.println("добавлено слово: " + word.getWord());
+                }
             }
         }
         return filteredWords;

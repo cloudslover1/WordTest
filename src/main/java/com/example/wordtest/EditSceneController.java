@@ -88,11 +88,6 @@ public class EditSceneController implements Initializable {
 
     }
 
-    //public void comboBoxChange(ActionEvent event) {
-        //categoriesList.setItems(categories);
-   // }
-
-
 
     static ObservableList<Word> words = FXCollections.observableArrayList();//каждый раз создается новый список, нужно вынести его из метода
 
@@ -131,6 +126,8 @@ public class EditSceneController implements Initializable {
         categoriesList.getItems().addAll(distinctCategories);
         categoriesList.getSelectionModel().selectFirst();
     }
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -279,7 +276,7 @@ public class EditSceneController implements Initializable {
     /**
      * Read the comma-separated list of student names from the text file
      */
-    private static ObservableList<Word> readWords(String filename) throws IOException {
+    static ObservableList<Word> readWords(String filename) throws IOException {
 
         ObservableList<Word> words1 = FXCollections.observableArrayList();
 

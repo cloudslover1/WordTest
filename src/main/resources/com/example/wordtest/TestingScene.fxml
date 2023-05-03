@@ -16,7 +16,6 @@
                      <font>
                         <Font name="System Bold" size="29.0" />
                      </font></Label>
-                  <Button mnemonicParsing="false" text="Button" />
                </children>
                <padding>
                   <Insets top="60.0" />

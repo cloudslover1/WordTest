@@ -3,7 +3,6 @@ package com.example.wordtest;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -19,11 +18,14 @@ import java.io.*;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
 public class EditSceneController implements Initializable {
+    static final ObservableList<String> categories = FXCollections.observableArrayList();
     public Button BackFromEditButton;
     public Button DeleteButton;
 
@@ -62,11 +64,14 @@ public class EditSceneController implements Initializable {
     ImageView view4 = new ImageView(img4);
 
     //List<String> categories;
-    ObservableList<String> categories = FXCollections.observableArrayList();
+    //public ObservableList<String> categories = FXCollections.observableArrayList();
 
-
+    public static ObservableList<String> getCategories() {
+        return categories;
+    }
 
     public void switchToMainMenu(ActionEvent event) throws IOException {
+        flag = 1;
         //"hello-view.fxml"
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("hello-view.fxml")));
         Stage window = (Stage) BackFromEditButton.getScene().getWindow();
@@ -83,32 +88,60 @@ public class EditSceneController implements Initializable {
 
     }
 
-    public void comboBoxChange(ActionEvent event) {
-        categoriesList.setItems(categories);
-    }
+    //public void comboBoxChange(ActionEvent event) {
+        //categoriesList.setItems(categories);
+   // }
 
-    ObservableList<Word> words = FXCollections.observableArrayList();//каждый раз создается новый список, нужно вынести его из метода
+
+
+    static ObservableList<Word> words = FXCollections.observableArrayList();//каждый раз создается новый список, нужно вынести его из метода
+
+    public static ObservableList<Word> getWords() {
+        return words;
+    }
     public void addWord(ActionEvent event) {
-        Word word = new Word(wordInput.getText(), translateInput.getText());
+        Word word = new Word(wordInput.getText(), translateInput.getText(), (String) categoriesList.getValue());
         //words = tableList.getItems();//каждый раз создается новый список, нужно вынести его из метода
         words.add(word);
-        tableList.setItems(words);
+        //tableList.setItems(words);
+        changeCategory(event);
         wordInput.setText("");
         translateInput.setText("");
 
     }
 
-    public void removeWord(ActionEvent event){
-        int selectedId = tableList.getSelectionModel().getSelectedIndex();
-        tableList.getItems().remove(selectedId);
+    public void removeWord(ActionEvent event) {
+        Word selectedWord = tableList.getSelectionModel().getSelectedItem();
+        if (selectedWord != null) {
+            tableList.getItems().remove(selectedWord);
+            words.remove(selectedWord);
+        }
+    }
+
+    public int flag = 0;
+
+    public void setCategories() {
+        // удаляем дубликаты из списка
+        List<String> distinctCategories = categories.stream()
+                .distinct()
+                .collect(Collectors.toList());
+
+        // устанавливаем значения ComboBox
+        categoriesList.getItems().clear();
+        categoriesList.getItems().addAll(distinctCategories);
+        categoriesList.getSelectionModel().selectFirst();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        loadListFromFile();
+        //loadListFromFile();
+
 
         categoriesList.setItems(categories);
         categoriesList.setValue(categories.get(0));
+
+        setCategories();
+
 
         wordTable.setCellValueFactory(new PropertyValueFactory<Word, String>("word"));
         translateTable.setCellValueFactory(new PropertyValueFactory<Word, String>("translate"));
@@ -182,6 +215,10 @@ public class EditSceneController implements Initializable {
         if (selectedItem != null && !selectedItem.equals("Все слова")) { // проверка на null и на "Item 1"
             int selectedIndex = categoriesList.getSelectionModel().getSelectedIndex(); // получение индекса выбранного элемента в ComboBox
             categories.remove(selectedItem); // удаление элемента из списка
+
+            // Удаление всех объектов в листе, у которых значение поля wordCategory совпадает со значением удаляемого элемента
+            words.removeIf(word -> word.getWordCategory().equals(selectedItem));
+
             categoriesList.getSelectionModel().clearSelection(); // очистка выбора ComboBox
             int itemsSize = categories.size();
             if (selectedIndex < itemsSize) {
@@ -192,6 +229,40 @@ public class EditSceneController implements Initializable {
         }
     }
 
+
+    public void changeCategory(ActionEvent event){
+        wordTable.setCellValueFactory(new PropertyValueFactory<>("word"));
+        translateTable.setCellValueFactory(new PropertyValueFactory<>("translate"));
+
+        // Получаем текущее значение ComboBox
+        String currentCategory = (String) categoriesList.getValue();
+
+        // Создаем новый список для объектов, соответствующих текущей категории
+        ObservableList<Word> filteredList = FXCollections.observableArrayList();
+
+        // Если выбрано значение "Все слова", добавляем все слова в список
+        if (currentCategory.equals("Все слова")) {
+            filteredList.addAll(words);
+        } else {
+            // Наполняем новый список объектами, соответствующими текущей категории
+            for (Word word : words) {
+                if (word.getWordCategory().equals(currentCategory)) {
+                    filteredList.add(word);
+                }
+            }
+
+            // Сортируем список по значению поля wordCategory
+            filteredList.sort(Comparator.comparing(Word::getWordCategory));
+        }
+
+        // Привязываем список к TableView
+        tableList.setItems(filteredList);
+
+        categoriesList.setItems(categories);
+
+        System.out.println("Метод сработал");
+    }
+
     /**
      * Write the list of students to a simple text file with first and last names separated by a comma
      */
@@ -200,7 +271,7 @@ public class EditSceneController implements Initializable {
 
         FileWriter writer = new FileWriter(filename);
         for (Word word : words) {
-            writer.write(word.getWord() + "," + word.getTranslate() + "\n");
+            writer.write(word.getWord() + "," + word.getTranslate() + ","  + word.getWordCategory() + "\n");
         }
         writer.close();
     }
@@ -218,7 +289,7 @@ public class EditSceneController implements Initializable {
             String[] names = line.split(",");
 
             // Add the student to the list
-            words1.add(new Word(names[0], names[1]));
+            words1.add(new Word(names[0], names[1], names[2]));
 
         }
 
@@ -228,19 +299,19 @@ public class EditSceneController implements Initializable {
     public void saveListToFile() {
         try {
             File file = new File("myList.txt"); // создание объекта File с именем файла
-            FileWriter writer = new FileWriter(file); // создание FileWriter
+            FileWriter writer = new FileWriter(file, false); // создание FileWriter, перезаписывающего файл
             for (String item : categories) { // перебор элементов списка
                 writer.write(item + "\n"); // запись элемента в файл
             }
             writer.flush(); // запись буферизованных данных в файл
             writer.close(); // закрытие FileWriter
-            System.out.println("List saved to file successfully.");
+            //System.out.println("List saved to file successfully.");
         } catch (IOException e) {
-            System.out.println("An error occurred while saving the list to file.");
+            //System.out.println("An error occurred while saving the list to file.");
             e.printStackTrace();
         }
     }
-    public void loadListFromFile() {
+    public static void loadListFromFile() {
         try {
             File file = new File("myList.txt"); // создание объекта File с именем файла
             BufferedReader reader = new BufferedReader(new FileReader(file)); // создание BufferedReader

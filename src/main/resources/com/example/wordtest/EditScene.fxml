@@ -41,7 +41,7 @@
                      <children>
                         <HBox alignment="CENTER_LEFT" prefHeight="62.0" prefWidth="237.0" spacing="15.0">
                            <children>
-                              <ComboBox fx:id="categoriesList" prefHeight="46.0" prefWidth="150.0" promptText=" Категория" style="-fx-background-radius: 15; -fx-background-color: white;">
+                              <ComboBox fx:id="categoriesList" onAction="#changeCategory" prefHeight="46.0" prefWidth="150.0" promptText=" Категория" style="-fx-background-radius: 15; -fx-background-color: white;">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>

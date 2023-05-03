@@ -1,24 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.wordtest.TestingSceneController">
+<AnchorPane prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: #E1E7F1;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.wordtest.TestingSceneController">
    <children>
-      <VBox prefHeight="450.0" prefWidth="700.0">
+      <VBox fx:id="containerBox" alignment="CENTER" prefHeight="450.0" prefWidth="700.0">
          <children>
-            <HBox alignment="CENTER" prefHeight="365.0" prefWidth="700.0">
+            <HBox fx:id="wordContainer" alignment="CENTER" prefHeight="155.0" prefWidth="700.0" spacing="30.0">
                <children>
-                  <TextField fx:id="speechField" />
-                  <Button mnemonicParsing="false" onAction="#letsHearIt" text="Button" />
+                  <Button fx:id="soundButton" mnemonicParsing="false" onAction="#letsHearIt" prefHeight="68.0" prefWidth="84.0" style="-fx-background-color: #FABF40;" />
+                  <Label fx:id="questionWord" alignment="CENTER" prefHeight="58.0" prefWidth="390.0" style="-fx-background-color: #FABF40; -fx-background-radius: 20;" text="apple" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="29.0" />
+                     </font></Label>
+                  <Button mnemonicParsing="false" text="Button" />
+               </children>
+               <padding>
+                  <Insets top="60.0" />
+               </padding>
+            </HBox>
+            <HBox fx:id="resultBox" alignment="CENTER" prefHeight="123.0" prefWidth="700.0">
+               <children>
+                  <Label fx:id="resultLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="63.0" prefWidth="581.0" style="-fx-background-color: #FABF40; -fx-background-radius: 15;" text="Вы ответили правильно на 10 из 50 слов" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="27.0" />
+                     </font>
+                  </Label>
                </children>
             </HBox>
-            <HBox alignment="BOTTOM_RIGHT" prefHeight="452.0" prefWidth="700.0">
+            <HBox fx:id="choicesContainer" alignment="CENTER" prefHeight="125.0" prefWidth="700.0" spacing="30.0">
                <children>
-                  <Button fx:id="BackFromTestionButton" mnemonicParsing="false" onAction="#switchToMainMenu2" text="Назад" />
+                  <Button fx:id="choice1" mnemonicParsing="false" onAction="#displayQuestionOnButton" prefHeight="67.0" prefWidth="180.0" style="-fx-background-color: #FABF40; -fx-background-radius: 20;" textFill="WHITE">
+                     <font>
+                        <Font size="27.0" />
+                     </font></Button>
+                  <Button fx:id="choice2" layoutX="285.0" layoutY="25.0" mnemonicParsing="false" onAction="#displayQuestionOnButton" prefHeight="67.0" prefWidth="180.0" style="-fx-background-color: #FABF40; -fx-background-radius: 20;" textFill="WHITE">
+                     <font>
+                        <Font size="27.0" />
+                     </font></Button>
+                  <Button fx:id="choice3" layoutX="375.0" layoutY="25.0" mnemonicParsing="false" onAction="#displayQuestionOnButton" prefHeight="67.0" prefWidth="180.0" style="-fx-background-color: #FABF40; -fx-background-radius: 20;" textFill="WHITE">
+                     <font>
+                        <Font size="27.0" />
+                     </font></Button>
+               </children>
+               <padding>
+                  <Insets bottom="50.0" />
+               </padding>
+            </HBox>
+            <HBox fx:id="backButtonContainer" alignment="BOTTOM_RIGHT" prefHeight="45.0" prefWidth="700.0">
+               <children>
+                  <Button fx:id="BackFromTestionButton" mnemonicParsing="false" onAction="#switchToMainMenu2" prefHeight="33.0" prefWidth="76.0" style="-fx-background-color: #FABF40; -fx-background-radius: 15;" text="Назад" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font></Button>
                </children>
             </HBox>
-         </children>
-      </VBox>
+         </children></VBox>
    </children>
 </AnchorPane>

@@ -4,23 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d997775-50d9-40c8-a18f-7aa84a342dd9" name="Changes" comment="categories delete and add functionality added">
-      <change afterPath="$PROJECT_DIR$/jarsjars/telegrambots-6.5.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sound.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sound1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="0d997775-50d9-40c8-a18f-7aa84a342dd9" name="Changes" comment="build 1.0 basic functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/myList.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wordtest/EditSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wordtest/EditSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wordtest/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wordtest/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wordtest/TestingSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wordtest/TestingSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wordtest/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wordtest/Word.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/wordtest/EditScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/wordtest/EditScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/wordtest/TestingScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/wordtest/TestingScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/wordtest/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/wordtest/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/words.txt" beforeDir="false" afterPath="$PROJECT_DIR$/words.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682775305926</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="build 1.0 basic functionality">
+      <created>1683125863852</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1683125863852</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -148,6 +140,7 @@
     <MESSAGE value="word storage added" />
     <MESSAGE value="categories added" />
     <MESSAGE value="categories delete and add functionality added" />
-    <option name="LAST_COMMIT_MESSAGE" value="categories delete and add functionality added" />
+    <MESSAGE value="build 1.0 basic functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="build 1.0 basic functionality" />
   </component>
 </project>

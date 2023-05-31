@@ -1,0 +1,192 @@
+@startuml
+
+title __WORDTEST's Class Diagram__\n
+
+  namespace  {
+    namespace om.example.wordtest {
+      class com.example.wordtest.DataHolder {
+          {static} + category : String
+          {static} + count : int
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.wordtest {
+      class com.example.wordtest.EditSceneController {
+          + AddButton : Button
+          + AddCategory : Button
+          + BackFromEditButton : Button
+          + DeleteButton : Button
+          + categoriesList : ComboBox
+          + deleteCategory : Button
+          + flag : int
+          + tableList : TableView<Word>
+          + translateInput : TextField
+          + translateTable : TableColumn<Word, String>
+          + wordInput : TextField
+          + wordTable : TableColumn<Word, String>
+          {static} ~ categories : ObservableList<String>
+          ~ img : Image
+          ~ img2 : Image
+          ~ img3 : Image
+          ~ img4 : Image
+          ~ view : ImageView
+          ~ view2 : ImageView
+          ~ view3 : ImageView
+          ~ view4 : ImageView
+          {static} ~ words : ObservableList<Word>
+          {static} - HOVERED_BUTTON : String
+          {static} - HOVERED_BUTTON_STYLE_delete : String
+          {static} - IDLE_BUTTON_STYLE : String
+          {static} - IDLE_BUTTON_STYLE_delete : String
+          - primaryStage : Stage
+          + addCategory()
+          + addWord()
+          + changeCategory()
+          {static} + getCategories()
+          {static} + getWords()
+          + initialize()
+          {static} + loadListFromFile()
+          + removeCategory()
+          + removeWord()
+          + saveListToFile()
+          + setCategories()
+          + setPrimaryStage()
+          + switchToMainMenu()
+          {static} ~ readWords()
+          - getFileExtension()
+          - selectFile()
+          {static} - writeToTextFile()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.wordtest {
+      class com.example.wordtest.HelloApplication {
+          {static} + main()
+          + start()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.wordtest {
+      class com.example.wordtest.HelloController {
+          + EditButton : Button
+          + TestButton : Button
+          + TestButton1 : Button
+          + catComboBox : ComboBox
+          + count : TextField
+          + exitButton : Button
+          ~ categoriesForComboBox : ObservableList<String>
+          ~ words1 : ObservableList<Word>
+          {static} - HOVERED_BUTTON_STYLE : String
+          {static} - IDLE_BUTTON_STYLE : String
+          + categoryCount()
+          + checkWordCountByCategory()
+          + closeApplication()
+          + getComboBoxValue()
+          + getTextFieldValue()
+          + initialize()
+          + setCategories()
+          + showErrorDialog()
+          + switchToEditScene()
+          + switchToTest()
+          + switchToTestingScene()
+          {static} ~ readWords()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.wordtest {
+      class com.example.wordtest.TestingSceneController {
+          + BackFromTestionButton : Button
+          + allQuestions : int
+          + backButtonContainer : HBox
+          + categoryChoice : String
+          + choice1 : Button
+          + choice2 : Button
+          + choice3 : Button
+          + choicesContainer : HBox
+          + containerBox : VBox
+          + correctAnwsers : int
+          + imageV : ImageView
+          + questionCount : int
+          + questionWord : Label
+          + resultBox : HBox
+          + resultLabel : Label
+          + soundButton : Button
+          + speechField : TextField
+          + wordContainer : HBox
+          ~ categoriesForCombobox : ObservableList<String>
+          ~ filteredWords : ObservableList<Word>
+          ~ fxmlLoader : FXMLLoader
+          ~ fxmlLoader2 : FXMLLoader
+          ~ img : Image
+          ~ randomWords : ObservableList<Word>
+          ~ root : Parent
+          ~ root2 : Parent
+          ~ view : ImageView
+          {static} - HOVERED_BUTTON_STYLE : String
+          {static} - IDLE_BUTTON_STYLE : String
+          + TestingSceneController()
+          + checkAnswer()
+          + chooseWords()
+          + displayQuestion()
+          + displayQuestionOnButton()
+          + handleButtonClick()
+          + initialize()
+          + letsHearIt()
+          + printSettings()
+          + setCategoryChoice()
+          + setQuestionCount()
+          + showResultDialog()
+          + switchToMainMenu2()
+          - changeImage()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.wordtest {
+      class com.example.wordtest.Word {
+          - translate : String
+          - word : String
+          - wordCategory : String
+          + Word()
+          + getTranslate()
+          + getWord()
+          + getWordCategory()
+          + setTranslate()
+          + setWord()
+          + setWordCategory()
+      }
+    }
+  }
+  
+
+  com.example.wordtest.EditSceneController .up.|> javafx.fxml.Initializable
+  com.example.wordtest.HelloApplication -up-|> javafx.application.Application
+  com.example.wordtest.HelloController .up.|> javafx.fxml.Initializable
+  com.example.wordtest.HelloController o-- com.example.wordtest.EditSceneController : editSceneController
+  com.example.wordtest.TestingSceneController .up.|> javafx.fxml.Initializable
+  com.example.wordtest.TestingSceneController o-- com.example.wordtest.EditSceneController : EditSceneController
+  com.example.wordtest.TestingSceneController o-- com.example.wordtest.HelloController : HelloController
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

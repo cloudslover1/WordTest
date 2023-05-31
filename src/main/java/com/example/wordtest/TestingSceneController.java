@@ -22,6 +22,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
@@ -48,16 +49,40 @@ public class TestingSceneController implements Initializable {
 
     private static final String IDLE_BUTTON_STYLE = "-fx-background-color:#7871FF; -fx-background-radius: 15; -fx-border-radius:15";
     private static final String HOVERED_BUTTON_STYLE = "-fx-background-color:#8190FF; -fx-background-radius: 15; -fx-border-radius:15";
+    public ImageView imageV;
 
     public TestingSceneController() throws IOException {
     }
 
 
+    private void changeImage() {
+        String imageName = questionWord.getText();
+        String imagePathJpg = "images" + File.separator + imageName + ".jpg";
+        String imagePathPng = "images" + File.separator + imageName + ".png";
+
+        Image image = null;
+
+        File imageFileJpg = new File(imagePathJpg);
+        File imageFilePng = new File(imagePathPng);
+
+        if (imageFileJpg.exists()) {
+            image = new Image(imageFileJpg.toURI().toString());
+        } else if (imageFilePng.exists()) {
+            image = new Image(imageFilePng.toURI().toString());
+        }
+
+        if (image != null) {
+            imageV.setImage(image);
+        } else {
+            System.out.println("Изображение не найдено: " + imageName);
+        }
+    }
     Image img = new Image("sound1.png");
     ImageView view = new ImageView(img);
 
 
     //для озвучивания
+    /** Метод использующий библиотеку freetts для озвучивания слов*/
     public void letsHearIt(ActionEvent event) {
        System.setProperty("freetts.voices", "com.sun.speech.freetts.en.us.cmu_us_kal.KevinVoiceDirectory");
        Voice voice = VoiceManager.getInstance().getVoice("kevin16");
@@ -77,6 +102,7 @@ public class TestingSceneController implements Initializable {
 
     ObservableList<Word> randomWords = FXCollections.observableArrayList();
 
+    /** Метод для перехода в главное меню*/
     public void switchToMainMenu2(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("hello-view.fxml")));
         Stage window = (Stage) BackFromTestionButton.getScene().getWindow();
@@ -98,6 +124,8 @@ public class TestingSceneController implements Initializable {
     }
 
     ObservableList<Word> filteredWords;
+
+    /** Метод initialize используется для вызова методов и */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -207,6 +235,7 @@ public class TestingSceneController implements Initializable {
             }
             filteredWords.remove(0);
         }
+        changeImage();
     }
 
     public int correctAnwsers = 0;

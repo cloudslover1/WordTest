@@ -1,17 +1,24 @@
 package com.example.wordtest;
 
+
+
+
+
 public class Word {
+
     private String word;
     private String translate;
 
     private String wordCategory;
 
+    /**Конструктор класса Word*/
     public Word(String word, String translate, String wordCategory){
         this.word = word;
         this.translate = translate;
         this.wordCategory = wordCategory;
     }
 
+    //Объявление геттеров и сеттеров
     public String getWord(){return word;}
 
     public void setWord(String word) {this.word = word;}

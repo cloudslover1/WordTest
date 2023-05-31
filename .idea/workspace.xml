@@ -4,15 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d997775-50d9-40c8-a18f-7aa84a342dd9" name="Changes" comment="All done">
+    <list default="true" id="0d997775-50d9-40c8-a18f-7aa84a342dd9" name="Changes" comment="all done v2">
+      <change afterPath="$PROJECT_DIR$/WordTest.plantuml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Fruits.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Monitor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/apple.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/avacado.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/blackberry.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/car.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/chair.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/headphones.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/meat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/mouse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/pen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/pineapple.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/stawberry.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/strawberry.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/table.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/tomato.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/wordtest/wordtest.plantuml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/java.plantuml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/myList.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wordtest/DataHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wordtest/DataHolder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wordtest/EditSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wordtest/EditSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wordtest/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wordtest/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wordtest/TestingSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wordtest/TestingSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/wordtest/EditScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/wordtest/EditScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wordtest/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wordtest/Word.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/wordtest/TestingScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/wordtest/TestingScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/wordtest/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/wordtest/hello-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/words.txt" beforeDir="false" afterPath="$PROJECT_DIR$/words.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +43,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -55,11 +75,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/traitor/Desktop/freetts-1.2/lib/mbrola.jar",
+    "last_opened_file_path": "D:/Do not forget to delete/JavaTasks/WordTest",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.38850576",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RunManager">
@@ -150,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683148110935</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="all done v2">
+      <created>1683151925992</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1683151925992</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -164,6 +191,7 @@
     <MESSAGE value="categories delete and add functionality added" />
     <MESSAGE value="build 1.0 basic functionality" />
     <MESSAGE value="All done" />
-    <option name="LAST_COMMIT_MESSAGE" value="All done" />
+    <MESSAGE value="all done v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="all done v2" />
   </component>
 </project>

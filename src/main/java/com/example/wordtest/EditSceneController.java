@@ -12,12 +12,15 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.URL;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
@@ -90,6 +93,61 @@ public class EditSceneController implements Initializable {
     }
 
 
+    //для добавления картинки
+    private Stage primaryStage; // Приватное поле для хранения ссылки на главное окно
+
+    // Остальной код приложения
+
+    // Метод, который будет установлен из контроллера
+    public void setPrimaryStage(Stage primaryStage) {
+        this.primaryStage = primaryStage;
+    }
+
+
+
+    private void selectFile(Stage primaryStage) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Изображения", "*.jpg", "*.png")
+        );
+
+        // Открытие диалогового окна выбора файла
+        File selectedFile = fileChooser.showOpenDialog(primaryStage);
+        if (selectedFile != null) {
+            try {
+                // Создание нового имени файла на основе текста в label
+                String newFileName = wordInput.getText() + "." + getFileExtension(selectedFile);
+
+                // Определение пути для сохранения файла в папке "images" внутри папки проекта
+                String projectDirectory = System.getProperty("user.dir");
+                String destinationPath = projectDirectory + File.separator + "images" + File.separator + newFileName;
+
+                // Создание папки "images", если она не существует
+                File imagesDirectory = new File(projectDirectory + File.separator + "images");
+                if (!imagesDirectory.exists()) {
+                    imagesDirectory.mkdir();
+                }
+
+                // Копирование выбранного файла в папку "images" с новым именем
+                Files.copy(selectedFile.toPath(), new File(destinationPath).toPath(),
+                        StandardCopyOption.REPLACE_EXISTING);
+                System.out.println("Файл скопирован: " + destinationPath);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    private String getFileExtension(File file) {
+        String fileName = file.getName();
+        int dotIndex = fileName.lastIndexOf('.');
+        if (dotIndex > 0 && dotIndex < fileName.length() - 1) {
+            return fileName.substring(dotIndex + 1).toLowerCase();
+        }
+        return "";
+    }
+
     static ObservableList<Word> words = FXCollections.observableArrayList();//каждый раз создается новый список, нужно вынести его из метода
 
     public static ObservableList<Word> getWords() {
@@ -101,8 +159,11 @@ public class EditSceneController implements Initializable {
         words.add(word);
         //tableList.setItems(words);
         changeCategory(event);
+        setPrimaryStage(primaryStage);
+        selectFile(this.primaryStage);
         wordInput.setText("");
         translateInput.setText("");
+
 
     }
 

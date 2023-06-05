@@ -2,12 +2,15 @@
 Программа представляет собой инструмент призваный помочь людям изучающий иностранный язык, а именно помочь людям запоминать иностранные слова
 
 Окно главного меню приложения:
+
 ![image](https://github.com/cloudslover1/WordTest/assets/74301524/2770db62-81d3-4719-bed8-87232c44c781)
 
 Окно тестирования:
+
 ![image](https://github.com/cloudslover1/WordTest/assets/74301524/24c80e0f-e1b7-4589-b80b-61fde8697223)
 
 Окно добавления слов:
+
 ![image](https://github.com/cloudslover1/WordTest/assets/74301524/9eb97a3e-e9b2-46f5-b982-f458c5e58fb1)
 
 

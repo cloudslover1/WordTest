@@ -17,6 +17,7 @@
 #Архитектура
 
 Диаграмма классов:
+
 ![image](https://github.com/cloudslover1/WordTest/assets/74301524/3d50b6c2-467e-4a95-9e56-4d2a581d0c86)
 
 #Зависимости
